@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="3pt"
+        android:background="@drawable/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TVTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TVDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10pt"
+            android:text="The content of title goes here and it is much more longer than the title is." />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/ivDeleteNote"
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/delete" />
+
+            <ImageView
+                android:id="@+id/ivEditNote"
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/edit" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

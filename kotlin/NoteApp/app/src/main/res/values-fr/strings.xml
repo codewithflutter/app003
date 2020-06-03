@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mes notes</string>
+    <string name="addBtn">Ajouter de nouveaux</string>
+    <string name="titleHint">Entrer le titre</string>
+    <string name="descHint">Enterz la description de la note</string>
+</resources>

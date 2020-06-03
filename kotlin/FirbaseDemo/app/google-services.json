@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "214191138851",
+    "firebase_url": "https://firbasedemo-3f891.firebaseio.com",
+    "project_id": "firbasedemo-3f891",
+    "storage_bucket": "firbasedemo-3f891.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214191138851:android:284b89a081de7e6be42996",
+        "android_client_info": {
+          "package_name": "com.vikeshpatil.firbasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214191138851-k883sv5o9udv7jp2pjp3f6kd52o7mjhs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikeshpatil.firbasedemo",
+            "certificate_hash": "dce93d6c430d649a076448f4077aa9c968ff8ea8"
+          }
+        },
+        {
+          "client_id": "214191138851-n2n72ioft28rnigfsqt2f8mjgkc7ptcl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLrUFPQy94CZjKws38e3rmEMfGzlDF-E0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214191138851-n2n72ioft28rnigfsqt2f8mjgkc7ptcl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
