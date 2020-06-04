@@ -50,9 +50,9 @@ class NewNote : AppCompatActivity() {
             var selectionArgs = arrayOf(id.toString())
             val ID = dbManager.Update(values, "ID=?", selectionArgs)
             if(id > 0){
-                Toast.makeText(this, "Note is added successfully", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Note is updated added successfully", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(this, "Unable to add note :(", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Unable to update note :(", Toast.LENGTH_LONG).show()
             }
         }
     }

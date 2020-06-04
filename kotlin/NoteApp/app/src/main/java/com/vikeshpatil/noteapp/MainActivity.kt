@@ -110,13 +110,15 @@ class MainActivity : AppCompatActivity() {
 
             myView.TVTitle.text = myNote.noteTitle
             myView.TVDesc.text = myNote.noteDesc
+
+//            Delete Note
             myView.ivDeleteNote.setOnClickListener(View.OnClickListener {
                var dbManager = DBManager(this.context!!)
                 val selectionArgs = arrayOf(myNote.noteId.toString())
                 dbManager.Delete("Id=?", selectionArgs)
                 LoadQuery("%")
             })
-
+//              Edit Note
             myView.ivEditNote.setOnClickListener(View.OnClickListener {
                 GoToEdit(myNote)
             })
