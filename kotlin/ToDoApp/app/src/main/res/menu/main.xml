@@ -1,15 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/addItem"
-        android:icon="@drawable/ic_add_white_24dp"
-        android:title="Add"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/done"
-        android:icon="@drawable/ic_done_white_24dp"
-        android:title="Completed"
-        app:showAsAction="ifRoom" />
-</menu>
+    xmlns:android="http://schemas.android.com/apk/res/android"/>

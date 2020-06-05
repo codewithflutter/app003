@@ -66,7 +66,6 @@ class DBManager{
     }
 
     fun Update(values: ContentValues, selection: String, selectionArgs: Array<String>): Int{
-
         val count = sqlDB!!.update(TABLE_NAME, values, selection, selectionArgs)
         return count
     }
