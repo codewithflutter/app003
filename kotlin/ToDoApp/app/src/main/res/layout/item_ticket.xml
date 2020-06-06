@@ -7,12 +7,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="4sp">
 
         <CheckBox
+            android:id="@+id/chComplete"
+            style="@android:style/Widget.Holo.CompoundButton.CheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/chComplete"/>
+            android:layout_marginLeft="2sp" />
 
         <TextView
             android:id="@+id/todoItem"
@@ -20,6 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="4sp"
             android:layout_weight="1"
+            android:includeFontPadding="true"
+            android:inputType="textShortMessage"
             android:padding="4sp"
             android:text="Water Plants"
             android:textSize="20sp" />
@@ -28,11 +33,12 @@
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:baselineAlignBottom="@+id/todoItem"
-            android:background="@android:color/transparent"
             android:layout_gravity="end"
             android:layout_weight="0"
-            app:srcCompat="@android:drawable/btn_dialog" />
+            android:background="@android:color/transparent"
+            android:baselineAlignBottom="false"
+            android:paddingTop="4sp"
+            app:srcCompat="@drawable/delete" />
 
     </LinearLayout>
 </LinearLayout>

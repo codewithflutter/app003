@@ -2,14 +2,16 @@ package com.vikeshpatil.todoapp
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.StrikethroughSpan
 import android.view.*
-import android.widget.BaseAdapter
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_ticket.view.*
@@ -69,7 +71,7 @@ class MainActivity : AppCompatActivity(), ItemRowListener {
         LoadItemsQuery("%")
     }
 
-    fun LoadItemsQuery(Description: String){
+     fun LoadItemsQuery(Description: String){
 
         var dbManager = DBManager(this)
         val selectionArgs = arrayOf(Description)
@@ -111,7 +113,8 @@ class MainActivity : AppCompatActivity(), ItemRowListener {
 
         if (count > 0){
             if (isDone == true){
-                Toast.makeText(this, item .description +" Completed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, item.description +" Completed", Toast.LENGTH_SHORT).show()
+
             }else{
                 Toast.makeText(this, item.description + " is incomplete", Toast.LENGTH_SHORT).show()
             }
@@ -153,7 +156,7 @@ class MainActivity : AppCompatActivity(), ItemRowListener {
         return true
     }
 
-    class TodoItemAdapter: BaseAdapter{
+    inner class TodoItemAdapter: BaseAdapter{
 
         var todoItemList = ArrayList<TodoItem>()
         var context:Context? = null
