@@ -81,11 +81,12 @@ class MainActivity : AppCompatActivity(), ItemRowListener {
 
         if (cursor.moveToFirst()){
             do{
-                val objectId = cursor.getInt(cursor.getColumnIndex("ID"))
-                val description = cursor.getString(cursor.getColumnIndex("Description"))
-                val isComplete = cursor.getInt(cursor.getColumnIndex("isComplete"))
+                val todoItem = TodoItem.create()
+                todoItem.objectId = cursor.getInt(cursor.getColumnIndex("ID"))
+                todoItem.description = cursor.getString(cursor.getColumnIndex("Description"))
+                todoItem.isCompleted = IntToBool(cursor.getInt(cursor.getColumnIndex("isComplete")))
 
-                todoItemList.add(TodoItem(objectId, description, IntToBool(isComplete)))
+                todoItemList.add(todoItem)
             }while (cursor.moveToNext())
         }
 
