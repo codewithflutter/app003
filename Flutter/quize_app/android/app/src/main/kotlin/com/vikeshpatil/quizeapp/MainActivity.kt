@@ -1,0 +1,6 @@
+package com.vikeshpatil.quizeapp
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
