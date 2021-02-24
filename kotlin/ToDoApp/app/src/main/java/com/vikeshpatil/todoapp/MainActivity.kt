@@ -14,6 +14,7 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_ticket.*
 import kotlinx.android.synthetic.main.item_ticket.view.*
 
 class MainActivity : AppCompatActivity(), ItemRowListener {
@@ -182,6 +183,11 @@ class MainActivity : AppCompatActivity(), ItemRowListener {
 //          Change status of item as complete or incomplete
             view.chComplete.setOnClickListener{
                 rowItemListener!!.ModifyItemState(item, item.objectId!!, !item.isCompleted!!)
+//                val itemListView = view.chComplete.parent as LinearLayout
+//                val textViewItem =  itemListView.getChildAt(1) as TextView
+//
+//                textViewItem.paintFlags = textViewItem.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+//                adapter!!.notifyDataSetChanged()
             }
 
 //          Delete item

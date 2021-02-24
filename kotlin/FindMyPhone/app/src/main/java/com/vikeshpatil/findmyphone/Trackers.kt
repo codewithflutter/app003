@@ -14,6 +14,7 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_trackers.*
 import kotlinx.android.synthetic.main.contact_ticket.view.*
 import java.sql.Ref
@@ -41,6 +42,13 @@ class Trackers : AppCompatActivity() {
 
 //            Save to sharedReference
             userData!!.SaveContactInfo()
+
+//
+//          Remove from realtime database
+            val databaseReference = FirebaseDatabase.getInstance().reference
+            val userData = UserData(applicationContext)
+            databaseReference.child("Users").child(userData.LoadPhoneNumber()).child("Finders").child(userInfo.phoneNumber!!).removeValue()
+
         }
 
         userData!!.LoadContactInfo()
@@ -137,11 +145,18 @@ class Trackers : AppCompatActivity() {
                             phone!!.moveToFirst()
                             var phoneNumber = phone.getString(phone.getColumnIndex("data1"))
                             val name= cR!!.getString(cR.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
-//                            phoneNumber = UserData.formatPhoneNumber(phoneNumber)
+                            phoneNumber = UserData.formatPhoneNumber(phoneNumber)
                             UserData.trackers.put(phoneNumber, name)
 
                             RefreshActivity()
+//                            Save to shared reference
                             userData!!.SaveContactInfo()
+
+//                            Save to realtime database
+                            val databaseReference = FirebaseDatabase.getInstance().reference
+                            val userData = UserData(applicationContext)
+                            databaseReference.child("Users").child(userData.LoadPhoneNumber()).child("Finders").child(phoneNumber).setValue(true)
+
                         }
                     }
                 }
