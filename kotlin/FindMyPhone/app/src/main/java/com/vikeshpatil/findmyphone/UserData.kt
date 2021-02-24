@@ -22,6 +22,12 @@ class UserData {
 
     fun LoadPhoneNumber():String{
         val phoneNumber = sharedPreferences!!.getString("phoneNumber", "empty")
+
+        return phoneNumber!!
+    }
+
+    fun FirstTimeLoadNumber():String{
+        val phoneNumber = sharedPreferences!!.getString("phoneNumber", "empty")
         if (phoneNumber.equals("empty")){
             val intent = Intent(context, Login::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -37,7 +43,7 @@ class UserData {
         fun formatPhoneNumber(phoneNumber:String): String{
             var onlyNumber = phoneNumber.replace("[^0-9]".toRegex(), "")
             if(phoneNumber[0] == '+'){
-                onlyNumber = "+" + phoneNumber
+                onlyNumber = "+" + onlyNumber
             }
             return onlyNumber
         }
@@ -50,7 +56,7 @@ class UserData {
             if(trackersList.length == 0){
                 trackersList = key + "%" + value
             }else{
-                trackersList += key + "%" + value
+                trackersList += "%$key%$value"
             }
         }
 
